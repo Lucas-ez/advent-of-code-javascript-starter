@@ -16,17 +16,19 @@
 export function part1(input) {
   const rounds = input.split('\r\n')
   const scores = rounds.map( strRound => {
-    const [oponnentPlay, myPlay] = strRound.split(" ")
+    const [opponentPlay, myPlay] = strRound.split(" ")
     let score = myPlay === 'X' ? 1 : ( myPlay === 'Y' ) ? 2 : 3
 
-    if ((myPlay === 'X' && oponnentPlay === 'A') || 
-        (myPlay === 'Y' && oponnentPlay === 'B') || 
-        (myPlay === 'Z' && oponnentPlay === 'C'))
+    console.log(strRound);
+
+    if ((myPlay === 'X' && opponentPlay === 'A') || 
+        (myPlay === 'Y' && opponentPlay === 'B') || 
+        (myPlay === 'Z' && opponentPlay === 'C'))
       score += 3
 
-    if ((myPlay === 'X' && oponnentPlay === 'C') || 
-        (myPlay === 'Y' && oponnentPlay === 'A') || 
-        (myPlay === 'Z' && oponnentPlay === 'B'))
+    if ((myPlay === 'X' && opponentPlay === 'C') || 
+        (myPlay === 'Y' && opponentPlay === 'A') || 
+        (myPlay === 'Z' && opponentPlay === 'B'))
       score += 6
 
     return score
